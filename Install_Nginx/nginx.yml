@@ -20,5 +20,174 @@
         enabled: yes
 
 
-        An exception occurred during task execution. To see the full traceback, use -vvv. The error was: botocore.exceptions.NoCredentialsError: Unable to locate credentials
-fatal: [localhost]: FAILED! => {"boto3_version": "1.34.152", "botocore_version": "1.34.152", "changed": false, "msg": "Could not describe default VPC: Unable to locate credentials"}
+samprita@samprita-VirtualBox:~/AnsibleProject$ ansible-playbook create-ec2.yml -vvv
+ansible-playbook [core 2.16.3]
+  config file = /home/samprita/AnsibleProject/ansible.cfg
+  configured module search path = ['/home/samprita/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/samprita/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.12.3 (main, Apr 10 2024, 05:33:47) [GCC 13.2.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+Using /home/samprita/AnsibleProject/ansible.cfg as config file
+host_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+script declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+yaml declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+ini declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+toml declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+redirecting (type: modules) community.aws.ec2_instance to amazon.aws.ec2_instance
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: create-ec2.yml ***********************************************************************************************
+1 plays in create-ec2.yml
+
+PLAY [Create an EC2 instance] ******************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************
+task path: /home/samprita/AnsibleProject/create-ec2.yml:2
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: samprita
+<127.0.0.1> EXEC /bin/sh -c 'echo ~samprita && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/samprita/.ansible/tmp `"&& mkdir "` echo /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561 `" && echo ansible-tmp-1722586009.2543225-7047-10978780869561="` echo /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561 `" ) && sleep 0'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/setup.py
+<127.0.0.1> PUT /home/samprita/.ansible/tmp/ansible-local-7043_n9t3qux/tmpwejrm6je TO /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561/AnsiballZ_setup.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561/ /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561/AnsiballZ_setup.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fnnjrfkcwgjeunfzcimtyhmfkwlhjycu ; /usr/bin/python3 /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561/AnsiballZ_setup.py'"'"' && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/samprita/.ansible/tmp/ansible-tmp-1722586009.2543225-7047-10978780869561/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost]
+
+TASK [Create an EC2 instance] ******************************************************************************************
+task path: /home/samprita/AnsibleProject/create-ec2.yml:7
+redirecting (type: modules) community.aws.ec2_instance to amazon.aws.ec2_instance
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: samprita
+<127.0.0.1> EXEC /bin/sh -c 'echo ~samprita && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/samprita/.ansible/tmp `"&& mkdir "` echo /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421 `" && echo ansible-tmp-1722586010.6049085-7151-184925119847421="` echo /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421 `" ) && sleep 0'
+redirecting (type: modules) community.aws.ec2_instance to amazon.aws.ec2_instance
+Using module file /usr/lib/python3/dist-packages/ansible_collections/amazon/aws/plugins/modules/ec2_instance.py
+<127.0.0.1> PUT /home/samprita/.ansible/tmp/ansible-local-7043_n9t3qux/tmpf5iu6idt TO /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421/AnsiballZ_ec2_instance.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421/ /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421/AnsiballZ_ec2_instance.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-tkiyoiuvrmgirfhpryexlochlhxprtri ; aws_access_key_id=AKIA3FLD2760EDPGRM3M aws_secret_access_key=M/CBVa0ZrQ6zFGH8gfb5HVWSHXCqspatx131/Zd1 /usr/bin/python3 /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421/AnsiballZ_ec2_instance.py'"'"' && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/samprita/.ansible/tmp/ansible-tmp-1722586010.6049085-7151-184925119847421/ > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+Traceback (most recent call last):
+  File "/tmp/ansible_community.aws.ec2_instance_payload_8phg59vb/ansible_community.aws.ec2_instance_payload.zip/ansible_collections/amazon/aws/plugins/modules/ec2_instance.py", line 1733, in get_default_vpc
+    vpcs = client.describe_vpcs(aws_retry=True, Filters=ansible_dict_to_boto3_filter_list({"isDefault": "true"}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ansible_community.aws.ec2_instance_payload_8phg59vb/ansible_community.aws.ec2_instance_payload.zip/ansible_collections/amazon/aws/plugins/module_utils/retries.py", line 105, in deciding_wrapper
+    return retrying_wrapper(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ansible_community.aws.ec2_instance_payload_8phg59vb/ansible_community.aws.ec2_instance_payload.zip/ansible_collections/amazon/aws/plugins/module_utils/cloud.py", line 119, in _retry_wrapper
+    return _retry_func(
+           ^^^^^^^^^^^^
+  File "/tmp/ansible_community.aws.ec2_instance_payload_8phg59vb/ansible_community.aws.ec2_instance_payload.zip/ansible_collections/amazon/aws/plugins/module_utils/cloud.py", line 68, in _retry_func
+    return func()
+           ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/client.py", line 565, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/client.py", line 999, in _make_api_call
+    http, parsed_response = self._make_request(
+                            ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/client.py", line 1023, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/endpoint.py", line 196, in _send_request
+    request = self.create_request(request_dict, operation_model)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/endpoint.py", line 132, in create_request
+    self._event_emitter.emit(
+  File "/usr/local/lib/python3.12/dist-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/signers.py", line 105, in handler
+    return self.sign(operation_name, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/botocore/signers.py", line 197, in sign
+    auth.add_auth(request)
+  File "/usr/local/lib/python3.12/dist-packages/botocore/auth.py", line 418, in add_auth
+    raise NoCredentialsError()
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+fatal: [localhost]: FAILED! => {
+    "boto3_version": "1.34.152",
+    "botocore_version": "1.34.152",
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "aap_callback": null,
+            "access_key": null,
+            "additional_info": null,
+            "availability_zone": null,
+            "aws_ca_bundle": null,
+            "aws_config": null,
+            "count": 1,
+            "cpu_credit_specification": null,
+            "cpu_options": null,
+            "debug_botocore_endpoint_logs": false,
+            "detailed_monitoring": null,
+            "ebs_optimized": null,
+            "endpoint_url": null,
+            "exact_count": null,
+            "filters": null,
+            "hibernation_options": false,
+            "iam_instance_profile": null,
+            "image": null,
+            "image_id": "ami-04a81a99f5ec58529",
+            "instance_ids": [],
+            "instance_initiated_shutdown_behavior": null,
+            "instance_type": "t2.micro",
+            "key_name": "AnsibleKey",
+            "launch_template": null,
+            "license_specifications": null,
+            "metadata_options": null,
+            "name": "MyEC2Instance",
+            "network": null,
+            "placement": null,
+            "placement_group": null,
+            "profile": null,
+            "purge_tags": true,
+            "region": "us-east-1",
+            "secret_key": null,
+            "security_group": null,
+            "security_groups": [
+                "sg-0c113fb628c8748ee"
+            ],
+            "session_token": null,
+            "state": "present",
+            "tags": null,
+            "tenancy": null,
+            "termination_protection": null,
+            "user_data": null,
+            "validate_certs": true,
+            "volumes": null,
+            "vpc_subnet_id": null,
+            "wait": true,
+            "wait_timeout": 600
+        }
+    },
+    "msg": "Could not describe default VPC: Unable to locate credentials"
+}
+
+PLAY RECAP *************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+
